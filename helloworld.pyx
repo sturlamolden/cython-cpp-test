@@ -175,7 +175,7 @@ def test_with_raii():
     # is not possible to pass arguments to the constructor
     cdef TestClass T   
     
-    # We can alo use a pointer
+    # We can also use a pointer
     cdef TestClass *pT = &T
     
     ## Cython generates invalid C++ if you try this.
