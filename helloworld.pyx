@@ -70,6 +70,11 @@ cdef class PyTestClass:
             self._check_alive()
             self._thisptr.y = <int> value
             
+            
+    def Multiply(PyTestClass self, int a, int b):
+        self._check_alive()
+        return self._thisptr.Multiply(a,b)
+            
     
     # The context manager protocol allows us to precisely
     # control the liftetime of the wrapped C++ object. del
