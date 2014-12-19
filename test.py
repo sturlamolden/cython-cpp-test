@@ -20,3 +20,7 @@ print("testing the wrapped class as context manager")
 helloworld.test_as_context_manager()
 print("\n")
 
+print("testing with C++ object on the stack")
+helloworld.test_with_raii()
+print("\n")
+

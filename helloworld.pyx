@@ -161,6 +161,33 @@ def test_as_context_manager():
         print(T.x)
 
 
+def test_with_raii():
+    """
+    Putting the C++ on the stack allows us to precisely control the
+    lifetime of the C++ object, but Cython does not yet (as of 0.21)
+    support C++ objects as context managers, so the RAII capabilities
+    are currenty somewhat limited compared to C++, unless we wrap the
+    C++ class with an extension object. This is also safe against
+    memory leaks.
+    """
+    cdef TestClass T   ## Cython does not support "cdef TestClass T()"
+    cdef TestClass *pT = &T
     
+    ## Cython generates invalid C++ if you try this
+    ## references are still not implemented correctly
+    # cdef TestClass &rT = T
+    
+    # either
+    T.x = 15
+    print(T.x)
+    
+    # or 
+    pT.x = 15
+    print(pT.x)
+    
+    ## not possible yet
+    # rT.x = 15
+    # print(rT.x)
+
 
 
