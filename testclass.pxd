@@ -6,7 +6,7 @@ cdef extern from "testclass.h":
 
     cppclass TestClass:
         int x,y
-        TestClass() except +MemoryError # autoconvert std::bad_alloc
+        TestClass() except +
         int Multiply(int a, int b)
 
         
