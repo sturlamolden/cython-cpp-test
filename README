@@ -1,0 +1,15 @@
+This is an example of how to wrap C++ with Cython.
+
+All you need to do is:
+
+$ python setup.py build_ext --inplace
+
+$ python test.py
+
+
+(C) 2014 Sturla Molden
+Use at your own risk.
+
+
+
+
