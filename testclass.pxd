@@ -1,6 +1,7 @@
 
-# Using a pxd file gives us a separate namespace for
-# the C++ declarations
+# Using a .pxd file gives us a separate namespace for
+# the C++ declarations. Using a .pxd file also allows
+# us to reuse the declaration in multiple .pyx modules.
 
 cdef extern from "testclass.h":
 
