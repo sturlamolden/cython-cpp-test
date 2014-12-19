@@ -7,8 +7,12 @@ $ python setup.py build_ext --inplace
 $ python test.py
 
 
-(C) 2014 Sturla Molden
+Written by Sturla Molden, Dec. 2014
+
 Use at your own risk.
+This code is in the public domain.
+
+
 
 
 
