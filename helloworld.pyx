@@ -170,11 +170,16 @@ def test_with_raii():
     C++ class with an extension object. This is also safe against
     memory leaks.
     """
-    cdef TestClass T   ## Cython does not support "cdef TestClass T()"
+    
+    # Cython does not support "cdef TestClass T()" so it 
+    # is not possible to pass arguments to the constructor
+    cdef TestClass T   
+    
+    # We can alo use a pointer
     cdef TestClass *pT = &T
     
-    ## Cython generates invalid C++ if you try this
-    ## references are still not implemented correctly
+    ## Cython generates invalid C++ if you try this.
+    ## References are still not implemented correctly.
     # cdef TestClass &rT = T
     
     # either
@@ -185,9 +190,21 @@ def test_with_raii():
     pT.x = 15
     print(pT.x)
     
-    ## not possible yet
+    ## Not possible yet because references are incorrectly
+    ## implemented
     # rT.x = 15
     # print(rT.x)
 
+    ## In the future, Cython is planning to support this
+    ## syntax or something similar, which will solve many of 
+    ## the problems metioned above:  
+    #
+    #  cdef TestClass *T
+    #  with new TestClass() as T:
+    #     T.x = 15
+    #     print(T.x)
+    #
+    #
 
 
+    
