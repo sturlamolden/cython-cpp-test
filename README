@@ -1,19 +1,17 @@
 This is an example of how to wrap C++ with Cython.
 
-All you need to do is:
+Assuming you have Python, Cython, Git and a C++ compiler 
+installed, all you need to do is:
+
+$ git clone https://github.com/sturlamolden/cython-cpp-test
+
+$ cd cython-cpp-test
 
 $ python setup.py build_ext --inplace
 
 $ python test.py
 
-
 Written by Sturla Molden, Dec. 2014
 
 Use at your own risk.
 This code is in the public domain.
-
-
-
-
-
-
