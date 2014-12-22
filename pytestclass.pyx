@@ -31,7 +31,7 @@ cdef class PyTestClass:
     def __dealloc__(PyTestClass self):
         # Only call del if the C++ object is alive, 
         # or we will get a segfault.
-        if self._thisptr:
+        if self._thisptr != NULL:
             del self._thisptr
             
     cdef int _check_alive(PyTestClass self) except -1:
@@ -86,10 +86,10 @@ cdef class PyTestClass:
         return self
     
     def __exit__(PyTestClass self, exc_tp, exc_val, exc_tb):
-        if self._thisptr:
+        if self._thisptr != NULL:
             del self._thisptr 
             self._thisptr = NULL
-
+        return False # propagate exceptions
 
 
 
