@@ -40,7 +40,7 @@ cdef class PyTestClass:
         # We therefore need a small utility to check for the
         # availability of self._thisptr
         if self._thisptr == NULL:
-            raise ValueError("C++ object is deleted")
+            raise ValueError("Wrapped C++ object is deleted")
         else:
             return 0    
 
