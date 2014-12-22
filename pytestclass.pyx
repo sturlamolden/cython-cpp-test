@@ -88,7 +88,7 @@ cdef class PyTestClass:
     def __exit__(PyTestClass self, exc_tp, exc_val, exc_tb):
         if self._thisptr != NULL:
             del self._thisptr 
-            self._thisptr = NULL
+            self._thisptr = NULL # inform __dealloc__
         return False # propagate exceptions
 
 
