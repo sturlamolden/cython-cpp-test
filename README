@@ -1,4 +1,4 @@
-This is an example of how to wrap C++ with Cython.
+This is a self-contained example of how to wrap C++ with Cython.
 
 Assuming you have Python, Cython, Git and a C++ compiler 
 installed, all you need to do is:
